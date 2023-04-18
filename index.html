@@ -10,6 +10,11 @@
 </head>
 
 <body>
+    <button id="returnBtn" onclick="history.back()"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+        </svg>
+    </button>
     <!-- Markup of todo list , default todo , add todo form 👇 -->
     <div class="container">
         <ul class="todo-list js-todo-list"></ul>
@@ -26,6 +31,16 @@
     </div>
     <script src="https://kit.fontawesome.com/dd8c49730d.js" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
+
+    <!-- show/hide return btn -->
+    <script>
+        var btn = document.getElementById("returnBtn");
+        if (window.history.length > 1) {
+            btn.classList.remove("d-none");
+        } else {
+            btn.classList.add("d-none");
+        }
+    </script>
 </body>
 
 </html>
