@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My ToDo List</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Markup of todo list , default todo , add todo form 👇 -->
+    <div class="container">
+        <ul class="todo-list js-todo-list"></ul>
+        <div class="empty-state">
+            <h1 class="app-title">My ToDo List</h1>
+            <i class="fas fa-tasks icon"></i>
+            <p class="empty-state__description">
+                Type in the below field 👇 and press enter to add your todo in the list
+            </p>
+        </div>
+        <form class="formselect">
+            <input autofocus type="text" class="inputselect" placeholder="Eg: Workout">
+        </form>
+    </div>
+    <script src="https://kit.fontawesome.com/dd8c49730d.js" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+/* Basic styling  */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Barlow', sans-serif;
+    line-height: 1.4;
+    background-color: #fff;
+    transition: all 0.5s;
+}
+
+/* Adding styling into container, svg button , todo list , todo item, todo item span , checked button */
+.container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #333;
+    margin: auto;
+    padding-top: 4rem;
+}
+
+.app-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 80px;
+}
+
+svg {
+    width: 64px;
+    height: 64px;
+}
+
+.todo-list {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.todo-item {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todo-item span {
+    flex-grow: 1;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 22px;
+}
+
+/* Styling for todo complete effect checked ( we gonna use this in javascript ) */
+.done span {
+    text-decoration: line-through;
+    user-select: none;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input:focus {
+    outline: none;
+    background-color: #d4e7d5;
+}
+
+.tick {
+    width: 30px;
+    height: 30px;
+    border: 3px solid #333;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.tick::before {
+    content: "✔️";
+    font-size: 20px;
+    display: none;
+}
+
+.done .tick::before {
+    display: inline;
+}
+
+/* Adding styling into delete todo button  */
+.delete-todo {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+}
+
+.delete-todo svg {
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+}
+
+.delete-todo:hover {
+    color: #dd8585;
+}
+
+/* Adding styling into add todo form */
+form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 3px solid #3333333d;
+}
+
+/* Add this below all the other styles */
+
+.empty-state {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.checklist-icon {
+    margin-bottom: 20px;
+}
+
+.empty-state__title,
+.empty-state__description {
+    /* margin-bottom: 20px; */
+    font-size: 25px;
+    text-align: center;
+    margin: 2rem;
+    width: 25rem;
+}
+
+/* Add this below the other styles */
+.todo-list:empty {
+    display: none;
+}
+
+.todo-list:empty+.empty-state {
+    display: flex;
+}
+
+@media (max-width: 608px) {
+    .container {
+        width: 90%;
+        margin: auto;
+    }
+
+    .app-title {
+        font-size: 3rem;
+    }
+
+    .empty-state__title,
+    .empty-state__description {
+        font-size: 1.5rem;
+        width: 18rem;
+    }
+
+    /*   .btn {
+position: absolute;
+right: -1rem;
+} */
+    em {
+        display: none;
+    }
+}
